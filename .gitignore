@@ -1,4 +1,19 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Environment
 .env
-dist
-build
+
+# Build
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
