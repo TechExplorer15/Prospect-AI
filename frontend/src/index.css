@@ -2,29 +2,29 @@
 
 /* ── Design Tokens ──────────────────────────────────── */
 :root {
-  --bg-void: #030305;
-  --bg-base: #09090b;
-  --bg-elevated: #121217;
-  --bg-surface: #18181f;
-  --bg-surface-hover: #1f1f2e;
-  --border: rgba(255,255,255,0.08);
-  --border-mid: rgba(255,255,255,0.15);
-  --border-strong: rgba(255,255,255,0.25);
-  --text: #F8F8F8;
-  --text-sub: #A1A1AA;
-  --text-muted: #52525B;
-  --blue: #3b82f6;
-  --blue-dim: rgba(59,130,246,0.15);
-  --violet: #8b5cf6;
-  --violet-dim: rgba(139,92,246,0.15);
-  --teal: #14b8a6;
-  --teal-dim: rgba(20,184,166,0.15);
-  --amber: #f59e0b;
-  --amber-dim: rgba(245,158,11,0.15);
-  --green: #10b981;
-  --green-dim: rgba(16,185,129,0.15);
-  --red: #F43F5E;
-  --red-dim: rgba(244,63,94,0.12);
+  --bg-void: #F9FAFB;
+  --bg-base: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  --bg-surface: #F3F4F6;
+  --bg-surface-hover: #E5E7EB;
+  --border: rgba(0,0,0,0.08);
+  --border-mid: rgba(0,0,0,0.12);
+  --border-strong: rgba(0,0,0,0.20);
+  --text: #18181B;
+  --text-sub: #52525B;
+  --text-muted: #71717A;
+  --blue: #2563eb;
+  --blue-dim: rgba(37,99,235,0.08);
+  --violet: #6366f1;
+  --violet-dim: rgba(99,102,241,0.08);
+  --teal: #0d9488;
+  --teal-dim: rgba(13,148,136,0.08);
+  --amber: #d97706;
+  --amber-dim: rgba(217,119,6,0.08);
+  --green: #059669;
+  --green-dim: rgba(5,150,105,0.08);
+  --red: #e11d48;
+  --red-dim: rgba(225,29,72,0.08);
   --font: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --mono: 'Geist Mono', 'SF Mono', 'Consolas', monospace;
   --r4: 4px;
@@ -33,11 +33,11 @@
   --r16: 16px;
   --r20: 20px;
   --r24: 24px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
-  --shadow-glow-blue: 0 0 20px rgba(79,142,255,0.15);
-  --shadow-glow-violet: 0 0 20px rgba(139,92,246,0.15);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.06);
+  --shadow-glow-blue: 0 0 0 2px rgba(37,99,235,0.2);
+  --shadow-glow-violet: 0 4px 12px rgba(0,0,0,0.08);
   --transition: 0.2s ease;
 }
 
@@ -57,9 +57,8 @@ html {
 body {
   background: var(--bg-void);
   background-image: 
-    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
+    radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
   background-attachment: fixed;
   color: var(--text);
   font-family: var(--font);
@@ -71,12 +70,12 @@ body {
 
 /* ── Typography Utilities ───────────────────────────── */
 .text-gradient {
-  background: linear-gradient(135deg, #fff, #a1a1aa);
+  background: linear-gradient(135deg, #18181B, #52525B);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .text-gradient-primary {
-  background: linear-gradient(135deg, var(--blue), var(--violet));
+  background: linear-gradient(135deg, var(--green), var(--teal));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -104,7 +103,7 @@ a:hover { color: var(--violet); }
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(3,3,5,0.6);
+  background: rgba(255,255,255,0.7);
   backdrop-filter: blur(24px) saturate(150%);
   -webkit-backdrop-filter: blur(24px) saturate(150%);
   border-bottom: 1px solid var(--border);
@@ -128,7 +127,7 @@ a:hover { color: var(--violet); }
 .navbar-logo .logo-icon {
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, var(--blue), var(--violet));
+  background: linear-gradient(135deg, var(--green), var(--teal));
   border-radius: var(--r8);
   display: flex;
   align-items: center;
@@ -192,7 +191,7 @@ a:hover { color: var(--violet); }
 
 /* ── Input Panel ────────────────────────────────────── */
 .input-panel {
-  background: rgba(9,9,11,0.7);
+  background: rgba(255,255,255,0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
@@ -201,7 +200,7 @@ a:hover { color: var(--violet); }
   height: fit-content;
   position: sticky;
   top: 88px;
-  box-shadow: 0 4px 24px -8px rgba(0,0,0,0.5);
+  box-shadow: var(--shadow-lg);
 }
 
 @media (max-width: 960px) {
@@ -253,8 +252,8 @@ a:hover { color: var(--violet); }
   outline: none;
 }
 .form-textarea:focus {
-  border-color: var(--blue);
-  box-shadow: var(--shadow-glow-blue);
+  border-color: var(--green);
+  box-shadow: 0 0 0 2px var(--green-dim);
 }
 .form-textarea::placeholder {
   color: var(--text-muted);
@@ -273,8 +272,8 @@ a:hover { color: var(--violet); }
   outline: none;
 }
 .form-input:focus {
-  border-color: var(--blue);
-  box-shadow: var(--shadow-glow-blue);
+  border-color: var(--green);
+  box-shadow: 0 0 0 2px var(--green-dim);
 }
 .form-input::placeholder {
   color: var(--text-muted);
@@ -301,9 +300,9 @@ a:hover { color: var(--violet); }
   background: var(--bg-surface);
 }
 .goal-option.selected {
-  border-color: var(--blue);
-  background: var(--blue-dim);
-  box-shadow: var(--shadow-glow-blue);
+  border-color: var(--green);
+  background: var(--green-dim);
+  box-shadow: 0 0 0 1px var(--green);
 }
 .goal-option .goal-icon {
   font-size: 18px;
@@ -324,7 +323,7 @@ a:hover { color: var(--violet); }
 .generate-btn {
   width: 100%;
   padding: 14px 24px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: none;
   border-radius: var(--r12);
   font-family: var(--font);
   font-size: 15px;
@@ -335,17 +334,16 @@ a:hover { color: var(--violet); }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  background-size: 200% 200%;
+  background: var(--green);
   color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 14px 0 rgba(139,92,246,0.39);
+  box-shadow: var(--shadow-sm);
 }
 .generate-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139,92,246,0.5);
-  background-position: 100% 50%;
+  box-shadow: var(--shadow-md);
+  background: #047857;
 }
 .generate-btn:active:not(:disabled) {
   transform: translateY(0);
@@ -433,7 +431,7 @@ a:hover { color: var(--violet); }
   gap: 16px;
   align-items: center;
   padding: 16px 20px;
-  background: var(--bg-base);
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--r12);
 }
@@ -456,19 +454,19 @@ a:hover { color: var(--violet); }
 
 /* ── Result Card ────────────────────────────────────── */
 .result-card {
-  background: rgba(9,9,11,0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--r16);
   overflow: hidden;
   animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
-  transition: border-color var(--transition), transform var(--transition);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 .result-card:hover {
   border-color: var(--border-mid);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 @keyframes fadeInUp {
@@ -587,7 +585,7 @@ a:hover { color: var(--violet); }
 /* ── Avoid Card (What NOT to Say) ───────────────────── */
 .result-card.avoid-card {
   border-left: 3px solid var(--amber);
-  background: linear-gradient(135deg, rgba(245,158,11,0.03), var(--bg-base));
+  background: rgba(217,119,6,0.03);
 }
 
 .avoid-card .result-card-header {
@@ -633,11 +631,10 @@ a:hover { color: var(--violet); }
   align-items: center;
   gap: 20px;
   padding: 20px 24px;
-  background: rgba(9,9,11,0.7);
-  backdrop-filter: blur(16px);
+  background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--r16);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .score-ring {
@@ -844,7 +841,7 @@ a:hover { color: var(--violet); }
   transform: translateX(-50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(79,142,255,0.08) 0%, rgba(139,92,246,0.04) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(5,150,105,0.06) 0%, rgba(13,148,136,0.03) 40%, transparent 70%);
   pointer-events: none;
 }
 
@@ -909,7 +906,7 @@ a:hover { color: var(--violet); }
   align-items: center;
   gap: 8px;
   padding: 16px 32px;
-  background: linear-gradient(135deg, var(--blue), var(--violet));
+  background: var(--green);
   color: white;
   font-family: var(--font);
   font-size: 16px;
@@ -921,10 +918,12 @@ a:hover { color: var(--violet); }
   position: relative;
   z-index: 1;
   text-decoration: none;
+  box-shadow: var(--shadow-sm);
 }
 .landing-cta:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-violet);
+  box-shadow: var(--shadow-md);
+  background: #047857;
   color: white;
 }
 
@@ -994,7 +993,7 @@ a:hover { color: var(--violet); }
   justify-content: space-between;
   padding: 0 32px;
   height: 60px;
-  background: rgba(6,6,8,0.6);
+  background: rgba(255,255,255,0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -1168,7 +1167,7 @@ a:hover { color: var(--violet); }
   font-size: 28px;
   font-weight: 800;
   font-family: var(--mono);
-  background: linear-gradient(135deg, var(--blue), var(--violet));
+  background: linear-gradient(135deg, var(--green), var(--teal));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
