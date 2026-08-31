@@ -48,10 +48,16 @@
   box-sizing: border-box;
 }
 
+input, button, textarea, select {
+  touch-action: manipulation;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -66,6 +72,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
 
 /* ── Typography Utilities ───────────────────────────── */
@@ -168,6 +175,12 @@ a:hover { color: var(--violet); }
   padding: 80px 24px 60px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .page-padded {
+    padding: 80px 16px 40px;
+  }
 }
 
 /* ── Tool Page ──────────────────────────────────────── */
@@ -368,6 +381,43 @@ a:hover { color: var(--violet); }
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+.btn-secondary {
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--r12);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--bg-surface);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.btn-secondary:hover:not(:disabled) {
+  background: var(--bg-surface-hover);
+  border-color: var(--border-mid);
+}
+.btn-secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input-action-group {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .input-action-group {
+    flex-direction: column;
+  }
 }
 
 /* ── Loading State ──────────────────────────────────── */
@@ -979,6 +1029,87 @@ a:hover { color: var(--violet); }
   font-size: 13px;
   color: var(--text-sub);
   line-height: 1.5;
+}
+
+/* ── Landing How It Works ───────────────────────────── */
+.landing-steps {
+  padding: 0 24px 100px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .landing-steps {
+    padding: 0 16px 60px;
+  }
+}
+
+.landing-steps-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 40px;
+}
+
+.landing-steps-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-step-item {
+  flex: 1 1 200px;
+  max-width: 240px;
+  text-align: center;
+}
+
+.landing-step-num {
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.landing-step-label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.landing-step-desc {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+/* ── Landing Footer CTA ─────────────────────────────── */
+.landing-footer {
+  padding: 60px 24px 80px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .landing-footer {
+    padding: 40px 16px 60px;
+  }
+}
+
+.landing-footer-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.landing-footer-desc {
+  color: var(--text-sub);
+  font-size: 15px;
+  margin-bottom: 28px;
 }
 
 /* ── Landing Navbar ─────────────────────────────────── */

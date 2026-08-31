@@ -110,7 +110,7 @@ function Tool() {
 
         <div className="form-group" style={{ marginBottom: '12px' }}>
           <label className="form-label">Profile Link <span className="text-muted">(optional)</span></label>
-          <div style={{ display: 'flex', gap: '8px' }}>
+          <div className="input-action-group">
             <input
               className="form-input"
               placeholder="https://linkedin.com/in/username"
@@ -119,8 +119,7 @@ function Tool() {
               disabled={scraping}
             />
             <button
-              className="generate-btn"
-              style={{ width: 'auto', padding: '12px 16px', background: 'var(--bg-surface)' }}
+              className="btn-secondary"
               onClick={handleScrape}
               disabled={scraping || !profileUrl.trim()}
             >

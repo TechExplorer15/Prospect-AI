@@ -68,48 +68,31 @@ function Landing() {
       </section>
 
       {/* ── How It Works ───────────────────────────── */}
-      <section style={{ padding: '0 24px 100px', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '28px', fontWeight: 700, letterSpacing: '-0.5px', marginBottom: '40px' }}>
+      <section className="landing-steps">
+        <h2 className="landing-steps-title">
           Three steps. Thirty seconds.
         </h2>
-        <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div className="landing-steps-grid">
           {[
             { num: '01', label: 'Paste Profile', desc: 'Copy any LinkedIn About, headline, or post' },
             { num: '02', label: 'Pick Your Goal', desc: 'Demo, partnership, recruiting, or general' },
             { num: '03', label: 'Get Results', desc: 'Personalised outreach ready to send' }
           ].map((step) => (
-            <div key={step.num} style={{
-              flex: '1 1 200px',
-              maxWidth: '240px',
-              textAlign: 'center'
-            }}>
-              <div style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '32px',
-                fontWeight: 800,
-                background: 'linear-gradient(135deg, var(--blue), var(--violet))',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                marginBottom: '12px'
-              }}>{step.num}</div>
-              <div style={{ fontWeight: 600, fontSize: '15px', marginBottom: '6px' }}>{step.label}</div>
-              <div style={{ fontSize: '13px', color: 'var(--text-sub)' }}>{step.desc}</div>
+            <div key={step.num} className="landing-step-item">
+              <div className="landing-step-num">{step.num}</div>
+              <div className="landing-step-label">{step.label}</div>
+              <div className="landing-step-desc">{step.desc}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* ── Footer CTA ─────────────────────────────── */}
-      <section style={{
-        padding: '60px 24px 80px',
-        textAlign: 'center',
-        borderTop: '1px solid var(--border)'
-      }}>
-        <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px' }}>
+      <section className="landing-footer">
+        <h2 className="landing-footer-title">
           Ready to write outreach that gets replies?
         </h2>
-        <p style={{ color: 'var(--text-sub)', fontSize: '15px', marginBottom: '28px' }}>
+        <p className="landing-footer-desc">
           20 free generations per hour. No signup required.
         </p>
         <Link to="/tool" className="landing-cta">
