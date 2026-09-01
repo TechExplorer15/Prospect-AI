@@ -93,7 +93,7 @@ function Landing() {
           Ready to write outreach that gets replies?
         </h2>
         <p className="landing-footer-desc">
-          20 free generations per hour. No signup required.
+          5 free generations per hour. No signup required.
         </p>
         <Link to="/tool" className="landing-cta">
           Start Generating →

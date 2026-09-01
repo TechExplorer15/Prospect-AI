@@ -11,16 +11,16 @@ const globalLimiter = rateLimit({
   legacyHeaders: false
 });
 
-// Outreach generation limiter — 20 per hour per IP
+// Outreach generation limiter — 5 per hour per IP
 const outreachLimiter = rateLimit({
   windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 3600000, // 1 hour
-  max: parseInt(process.env.RATE_LIMIT_MAX) || 20,
+  max: parseInt(process.env.RATE_LIMIT_MAX) || 5,
   handler: (req, res) => {
     const resetTime = new Date(Date.now() + (parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 3600000));
     res.status(429).json({
       error: 'Rate limit exceeded',
       resetsAt: resetTime.toISOString(),
-      message: `You have used your ${process.env.RATE_LIMIT_MAX || 20} free generations this hour. Try again at ${resetTime.toLocaleTimeString()}.`
+      message: `You have used your ${process.env.RATE_LIMIT_MAX || 5} free generations this hour. Try again at ${resetTime.toLocaleTimeString()}.`
     });
   },
   standardHeaders: true,
